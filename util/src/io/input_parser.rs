@@ -19,14 +19,15 @@ pub struct InputParser<TypeParamPlaceholder> {
 }
 
 impl<TypeParamPlaceholder> InputParser<TypeParamPlaceholder>
-    where
-        TypeParamPlaceholder: std::str::FromStr,
-        <TypeParamPlaceholder as std::str::FromStr>::Err: std::fmt::Debug,
+where
+    TypeParamPlaceholder: std::str::FromStr,
+    <TypeParamPlaceholder as std::str::FromStr>::Err: std::fmt::Debug,
 {
     pub fn data<T>(file_path: &str) -> Vec<T>
-        where
-            T: std::str::FromStr,
-            <T as std::str::FromStr>::Err: std::fmt::Debug, {
+    where
+        T: std::str::FromStr,
+        <T as std::str::FromStr>::Err: std::fmt::Debug,
+    {
         let file = File::open(file_path).expect("File not found.");
         let buf_reader = BufReader::new(file);
         buf_reader
