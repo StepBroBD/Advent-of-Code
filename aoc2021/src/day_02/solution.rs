@@ -1,4 +1,4 @@
-//! AoC 2021 Day 1.
+//! AoC 2021 Day 2.
 //!
 //! https://adventofcode.com/2021/day/2
 
@@ -10,14 +10,17 @@ pub fn part_01(input: &[String]) -> i64 {
     let mut y = 0;
     for line in input {
         let command: Vec<&str> = line.split_whitespace().collect();
-        if command[0] == "forward" {
-            x += i64::from_str(command[1]).unwrap();
-        }
-        if command[0] == "up" {
-            y -= i64::from_str(command[1]).unwrap();
-        }
-        if command[0] == "down" {
-            y += i64::from_str(command[1]).unwrap();
+        match command[0] {
+            "forward" => {
+                x += i64::from_str(command[1]).unwrap();
+            }
+            "up" => {
+                y -= i64::from_str(command[1]).unwrap();
+            }
+            "down" => {
+                y += i64::from_str(command[1]).unwrap();
+            }
+            _ => panic!("Command not recognized.")
         }
     }
     x * y
@@ -30,15 +33,18 @@ pub fn part_02(input: &[String]) -> i64 {
     let mut aim = 0;
     for line in input {
         let command: Vec<&str> = line.split_whitespace().collect();
-        if command[0] == "forward" {
-            x += i64::from_str(command[1]).unwrap();
-            y += aim * i64::from_str(command[1]).unwrap();
-        }
-        if command[0] == "up" {
-            aim -= i64::from_str(command[1]).unwrap();
-        }
-        if command[0] == "down" {
-            aim += i64::from_str(command[1]).unwrap();
+        match command[0] {
+            "forward" => {
+                x += i64::from_str(command[1]).unwrap();
+                y += aim * i64::from_str(command[1]).unwrap();
+            }
+            "up" => {
+                aim -= i64::from_str(command[1]).unwrap();
+            }
+            "down" => {
+                aim += i64::from_str(command[1]).unwrap();
+            }
+            _ => panic!("Command not recognized.")
         }
     }
     x * y
