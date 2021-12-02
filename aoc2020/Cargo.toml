@@ -5,4 +5,5 @@ edition = "2018"
 
 [dependencies]
 colored = "2"
+regex = "1.5.4"
 util = { path = "../util" }
