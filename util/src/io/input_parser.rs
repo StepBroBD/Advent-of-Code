@@ -1,9 +1,10 @@
-//! Input Parser.
+//! Input Parser for AoC.
 //!
-//! This module is currently only supporting parsing input
-//! from pure text file with one entry per line followed by
-//! a new line character. Output will be a single vector with
-//! passed type parameter.
+//! This module only supports parsing input from plain text
+//! file with format of one entry per line followed by a new
+//! line character.
+//! Output will be a vector with passed type parameter if
+//! given a valid file path.
 
 use std::fs::File;
 use std::io::{BufRead, BufReader};
