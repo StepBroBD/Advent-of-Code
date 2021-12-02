@@ -24,8 +24,6 @@ pub fn part_02(input: &Vec<i64>) -> i64 {
 
 #[cfg(test)]
 mod tests {
-    use colored::*;
-
     use util::io::input_parser::InputParser;
 
     use crate::day_01::solution::{part_01, part_02};
@@ -33,7 +31,6 @@ mod tests {
     #[test]
     fn test_aoc_2021_day_01_part_01() {
         let data = InputParser::<i64>::data("../aoc2021/src/day_01/input");
-        println!("{}", "##################################################".green());
         println!("AoC 2021 Day 1 Part 1: {}.", part_01(&data));
     }
 
@@ -41,6 +38,5 @@ mod tests {
     fn test_aoc_2021_day_01_part_02() {
         let data = InputParser::<i64>::data("../aoc2021/src/day_01/input");
         println!("AoC 2021 Day 1 Part 2: {}.", part_02(&data));
-        println!("{}", "##################################################".green());
     }
 }
