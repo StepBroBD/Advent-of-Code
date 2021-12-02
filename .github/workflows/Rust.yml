@@ -10,6 +10,16 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Cargo Clippy
+      run: cargo clippy --all-targets --all-features -- -D warnings
+    - name: Run Rust Format
+      run: cargo fmt --all
+
   Build:
     runs-on: ubuntu-latest
 
