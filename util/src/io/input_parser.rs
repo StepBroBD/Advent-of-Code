@@ -5,6 +5,8 @@
 //! line character.
 //! Output will be a vector with passed type parameter if
 //! given a valid file path.
+//! Each indices of the vector will contain each line of content
+//! given in the file.
 
 use std::fs::File;
 use std::io::{BufRead, BufReader};
