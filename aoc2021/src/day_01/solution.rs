@@ -18,8 +18,7 @@ pub fn part_02(input: &[i64]) -> i64 {
     let mut result = 0;
     for i in 0..input.len() {
         if i > 2
-            && input[i - 2] + input[i - 1] + input[i]
-            > input[i - 3] + input[i - 2] + input[i - 1]
+            && input[i - 2] + input[i - 1] + input[i] > input[i - 3] + input[i - 2] + input[i - 1]
         {
             result += 1;
         }
