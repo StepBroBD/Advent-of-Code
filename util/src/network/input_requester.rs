@@ -2,12 +2,14 @@
 //!
 //!
 
+/*
 use reqwest::StatusCode;
 
 #[derive(Debug)]
 pub struct InputRequester {
     request_endpoint: String,
 }
+
 
 impl InputRequester {
     pub fn get(self: &Self, year: &str, day: &str) {
@@ -32,3 +34,4 @@ impl InputRequester {
         }
     }
 }
+*/
