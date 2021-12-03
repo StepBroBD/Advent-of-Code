@@ -20,8 +20,8 @@ pub fn part_01(input: &[String]) -> i64 {
 pub fn part_02(input: &[String]) -> i64 {
     let mut floor_count = 0;
     let instructions: Vec<_> = input[0].chars().collect();
-    for position in 0..instructions.len() {
-        match instructions[position] {
+    for (position, instruction) in instructions.iter().enumerate() {
+        match instruction {
             '(' => floor_count += 1,
             ')' => floor_count -= 1,
             _ => panic!("Instruction not recognized."),
