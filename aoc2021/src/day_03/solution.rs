@@ -173,8 +173,8 @@ pub fn part_02(input: &[String]) -> i64 {
                 }
             }
         }
-        o2_rating = prefix;
-        // println!("Zero Counts: {:?}, One Counts: {:?}.", zero_counts, one_counts);
+        // println!("Final Selection for Oxygen: {:?}.", selections);
+        o2_rating = i64::from_str_radix(selections.get(0).unwrap().as_str(), 2).unwrap();
     }
     {
         let mut prefix = "".to_string();
@@ -214,10 +214,10 @@ pub fn part_02(input: &[String]) -> i64 {
                 }
             }
         }
-        co2_rating = prefix;
-        // println!("Zero Counts: {:?}, One Counts: {:?}.", zero_counts, one_counts);
+        // println!("Final Selection for Carbon Dioxide: {:?}.", selections);
+        co2_rating = i64::from_str_radix(selections.get(0).unwrap().as_str(), 2).unwrap();
     }
-    i64::from_str_radix(o2_rating.as_str(), 2).unwrap() * i64::from_str_radix(co2_rating.as_str(), 2).unwrap()
+    o2_rating * co2_rating
 }
 
 #[cfg(test)]
@@ -228,13 +228,13 @@ mod tests {
 
     #[test]
     fn test_aoc_2021_day_03_part_01() {
-        let input = InputParser::<String>::data("../aoc2021/src/day_03/input");
+        let input = InputParser::<String>::data("../aoc2021/src/day_03/input1");
         println!("AoC 2021 Day 3 Part 1: {}.", part_01(&input));
     }
 
     #[test]
     fn test_aoc_2021_day_03_part_02() {
-        let input = InputParser::<String>::data("../aoc2021/src/day_03/input");
+        let input = InputParser::<String>::data("../aoc2021/src/day_03/input1");
         println!("AoC 2021 Day 3 Part 2: {}.", part_02(&input));
     }
 }
